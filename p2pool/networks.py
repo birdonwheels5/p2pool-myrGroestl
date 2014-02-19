@@ -123,6 +123,139 @@ nets = dict(
         VERSION_WARNING=lambda v: 'Upgrade Terracoin to >= 0.8.0.1!' if v < 80001 else None,
     ),
 
+    digitalcoin=math.Object(
+        PARENT=networks.nets['digitalcoin'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=45, # blocks
+        IDENTIFIER='797EC5BC40AFA22E'.decode('hex'),
+        PREFIX='23CD74AF85036A9F'.decode('hex'),
+        P2P_PORT=23610,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8810,
+        BOOTSTRAP_ADDRS='xpool.net us-east1.cryptovein.com'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-dgc',
+        VERSION_CHECK=lambda v: True,
+    ),
+    
+    worldcoin=math.Object(
+        PARENT=networks.nets['worldcoin'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=60, # blocks
+        IDENTIFIER='5AE1DD1E84E6EC3A'.decode('hex'),
+        PREFIX='43B80223C931E0A0'.decode('hex'),
+        P2P_PORT=23620,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8820,
+        BOOTSTRAP_ADDRS='xpool.net us-east1.cryptovein.com'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-wdc',
+        VERSION_CHECK=lambda v: True,
+    ),
+    
+    craftcoin=math.Object(
+        PARENT=networks.nets['craftcoin'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=30, # blocks
+        IDENTIFIER='755F8AD0DD49380A'.decode('hex'),
+        PREFIX='31357EF0ECB3C1BC'.decode('hex'),
+        P2P_PORT=23630,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8830,
+        BOOTSTRAP_ADDRS='xpool.net us-east1.cryptovein.com'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-crc',
+        VERSION_CHECK=lambda v: True,
+    ),
+
+    casinocoin=math.Object(
+        PARENT=networks.nets['casinocoin'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=60, # blocks
+        IDENTIFIER='5AE1F9AAEA359544'.decode('hex'),
+        PREFIX='43DC544D48689C0D'.decode('hex'),
+        P2P_PORT=23640,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8840,
+        BOOTSTRAP_ADDRS='xpool.net us-east1.cryptovein.com bigiron.homelinux.com'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-csc',
+        VERSION_CHECK=lambda v: True,
+    ),
+
+    anoncoin=math.Object(
+        PARENT=networks.nets['anoncoin'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=10, # blocks
+        IDENTIFIER='40C08900F98B2AFA'.decode('hex'),
+        PREFIX='43F8D4260E9F8E60'.decode('hex'),
+        P2P_PORT=23650,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8850,
+        BOOTSTRAP_ADDRS='xpool.net us-east1.cryptovein.com anc.ottrbutt.com'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-anc',
+        VERSION_CHECK=lambda v: True,
+    ),
+
+    globalcoin=math.Object(
+        PARENT=networks.nets['globalcoin'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=45, # blocks
+        IDENTIFIER='5F0183D62F698832'.decode('hex'),
+        PREFIX='52F8CF5955E02234'.decode('hex'),
+        P2P_PORT=23660,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=8860,
+        BOOTSTRAP_ADDRS='xpool.net us-east1.cryptovein.com'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-glc',
+        VERSION_CHECK=lambda v: True,
+    ),
+
+    potcoin=math.Object(
+        PARENT=networks.nets['potcoin'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=10, # blocks
+        IDENTIFIER='DDA1A1D3B2F68CDD'.decode('hex'),
+        PREFIX='A2C3D4D541C11DDD'.decode('hex'),
+        P2P_PORT=8420,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=9420,
+        BOOTSTRAP_ADDRS='xpool.net us-east1.cryptovein.com'.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-pot',
+        VERSION_CHECK=lambda v: True,
+    ),
+
 )
 for net_name, net in nets.iteritems():
     net.NAME = net_name
