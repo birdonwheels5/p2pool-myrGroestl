@@ -268,9 +268,9 @@ nets = dict(
         BLOCK_PERIOD=30, # s targetspacing
         SYMBOL='CSC',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'casinocoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/casinocoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.casinocoin'), 'casinocoin.conf'),
-        BLOCK_EXPLORER_URL_PREFIX='http://altexplorer.net/block/',
-        ADDRESS_EXPLORER_URL_PREFIX='http://altexplorer.net/address/',
-        TX_EXPLORER_URL_PREFIX='http://altexplorer.net/tx/',
+        BLOCK_EXPLORER_URL_PREFIX='http://casinocoin.mooo.com/block/',
+        ADDRESS_EXPLORER_URL_PREFIX='http://casinocoin.mooo.com/address/',
+        TX_EXPLORER_URL_PREFIX='http://casinocoin.mooo.com/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
         DUST_THRESHOLD=1e8,
