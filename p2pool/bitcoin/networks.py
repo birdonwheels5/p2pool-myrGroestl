@@ -207,7 +207,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://dgc.cryptocoinexplorer.com/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=1e8,
+        DUST_THRESHOLD=0.03e8,
     ),
     
     worldcoin=math.Object(
@@ -219,7 +219,7 @@ nets = dict(
             'worldcoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
-        SUBSIDY_FUNC=lambda height: 64*100000000,
+        SUBSIDY_FUNC=lambda height: 40*100000000,
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
         BLOCK_PERIOD=30, # s targetspacing
         SYMBOL='WDC',
@@ -229,7 +229,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://wdc.cryptocoinexplorer.com/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=1e8,
+        DUST_THRESHOLD=0.03e8,
     ),
     
     craftcoin=math.Object(
@@ -251,7 +251,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://crc.cryptocoinexplorer.com/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=1e8,
+        DUST_THRESHOLD=0.03e8,
     ),
 
     casinocoin=math.Object(
@@ -273,7 +273,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://casinocoin.mooo.com/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=1e8,
+        DUST_THRESHOLD=0.03e8,
     ),
 
     anoncoin=math.Object(
@@ -295,7 +295,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://altexplorer.net/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=1e8,
+        DUST_THRESHOLD=0.03e8,
     ),
 
     globalcoin=math.Object(
@@ -317,7 +317,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://blockchainx.com/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=1e8,
+        DUST_THRESHOLD=0.03e8,
     ),
 
     nyancoin=math.Object(
@@ -339,7 +339,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://nyancha.in/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=1e8,
+        DUST_THRESHOLD=0.03e8,
     ),
 
     potcoin=math.Object(
@@ -361,7 +361,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://potchain.potcoin.info/transaction/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=1e8,
+        DUST_THRESHOLD=0.03e8,
     ),
 
     dogecoin=math.Object(
