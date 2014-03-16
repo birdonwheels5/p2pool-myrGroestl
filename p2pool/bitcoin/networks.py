@@ -350,8 +350,8 @@ nets = dict(
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
         SUBSIDY_FUNC=lambda height: 1000*100000000 >> (height + 1)//967680,
-        POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('groestl_hash').getPoWHash(data)),
-        BLOCK_PERIOD=150, # s targetspacing
+	POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('groestl_hash').getPoWHash(data)),
+        BLOCK_PERIOD=30, # s targetspacing
         SYMBOL='MYR',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'myriadcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/myriadcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.myriadcoin'), 'myriadcoin.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/block/',
