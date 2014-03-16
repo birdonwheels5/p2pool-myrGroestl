@@ -328,9 +328,9 @@ nets = dict(
             'myriadcoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
-        SUBSIDY_FUNC=lambda height: 100*100000000 >> (height + 1)//288400,
+        SUBSIDY_FUNC=lambda height: 1000*100000000 >> (height + 1)//967680,,
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('groestl_hash').getPoWHash(data)),
-        BLOCK_PERIOD=60, # s targetspacing
+        BLOCK_PERIOD=30, # s targetspacing
         SYMBOL='MYR',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'myriadcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/myriadcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.myriadcoin'), 'myriadcoin.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/block/',
@@ -338,7 +338,7 @@ nets = dict(
         TX_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/tx/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256//1000 - 1),
         DUMB_SCRYPT_DIFF=2**16,
-        DUST_THRESHOLD=0.03e8,
+        DUST_THRESHOLD=0.0001,
     ),
     nyancoin=math.Object(
         P2P_PREFIX='fcd9b7dd'.decode('hex'),
