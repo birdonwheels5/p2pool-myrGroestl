@@ -239,11 +239,11 @@ nets = dict(
     
     myriadcoin=math.Object(
         PARENT=networks.nets['myriadcoin'],
-        SHARE_PERIOD=15, # seconds target spacing
-        CHAIN_LENGTH=12*60*60//5, # shares
-        REAL_CHAIN_LENGTH=12*60*60//5, # shares
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=12*60*60//10, # shares
+        REAL_CHAIN_LENGTH=12*60*60//10, # shares
         TARGET_LOOKBEHIND=20, # shares coinbase maturity
-        SPREAD=30, # blocks
+        SPREAD=120, # blocks
         IDENTIFIER='5A0183D62F698832'.decode('hex'),
         PREFIX='5AF8CF5955E02234'.decode('hex'),
         P2P_PORT=10890,
