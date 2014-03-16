@@ -237,8 +237,8 @@ nets = dict(
         VERSION_CHECK=lambda v: True,
     ),
     
-    myriadsha=math.Object(
-        PARENT=networks.nets['myriadsha'],
+    myriadcoin=math.Object(
+        PARENT=networks.nets['myriadcoin'],
         SHARE_PERIOD=10, # seconds target spacing
         CHAIN_LENGTH=24*60*60//10, # shares
         REAL_CHAIN_LENGTH=24*60*60//10, # shares
@@ -246,7 +246,7 @@ nets = dict(
         SPREAD=60, # blocks
         IDENTIFIER='5A0183D62F698832'.decode('hex'),
         PREFIX='5AF8CF5955E02234'.decode('hex'),
-        P2P_PORT=10888,
+        P2P_PORT=10890,
         MIN_TARGET=0,
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=False,

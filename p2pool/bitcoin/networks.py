@@ -320,19 +320,19 @@ nets = dict(
         DUST_THRESHOLD=0.03e8,
     ),
     myriadcoin=math.Object(
-        P2P_PREFIX='fad9b7dd'.decode('hex'),
+        P2P_PREFIX='af4576ee'.decode('hex'),
         P2P_PORT=10888,
         ADDRESS_VERSION=50,
         RPC_PORT=10889,
         RPC_CHECK=defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
-            'myriadcoin address' in (yield bitcoind.rpc_help()) and
+            'myriadcoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
         SUBSIDY_FUNC=lambda height: 100*100000000 >> (height + 1)//288400,
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('groestl_hash').getPoWHash(data)),
         BLOCK_PERIOD=40, # s targetspacing
         SYMBOL='MYR',
-        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'globalcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/globalcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.globalcoin'), 'globalcoin.conf'),
+        CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'myriadcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/myriadcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.myriadcoin'), 'myriadcoin.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/block/',
         ADDRESS_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/address/',
         TX_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/tx/',
