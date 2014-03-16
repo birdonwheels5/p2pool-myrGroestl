@@ -236,6 +236,25 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-glc',
         VERSION_CHECK=lambda v: True,
     ),
+    
+    myriadsha=math.Object(
+        PARENT=networks.nets['myriadsha'],
+        SHARE_PERIOD=10, # seconds target spacing
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        TARGET_LOOKBEHIND=200, # shares coinbase maturity
+        SPREAD=60, # blocks
+        IDENTIFIER='5A0183D62F698832'.decode('hex'),
+        PREFIX='5AF8CF5955E02234'.decode('hex'),
+        P2P_PORT=10888,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=3333,
+        BOOTSTRAP_ADDRS='eup2pool.cryptopools.com usp2pool.cryptopools.com asiap2pool.cryptopools.com'.split(' '),
+        ANNOUNCE_CHANNEL='#cryptopools-p2p',
+        VERSION_CHECK=lambda v: True,
+    ),
 
     nyancoin=math.Object(
         PARENT=networks.nets['nyancoin'],
