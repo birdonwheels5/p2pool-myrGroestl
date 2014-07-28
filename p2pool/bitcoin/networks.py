@@ -340,7 +340,7 @@ nets = dict(
         DUST_THRESHOLD=0.0001,
     ),
 
-    myriadcoin=math.Object(
+    myriad_groestl=math.Object(
         P2P_PREFIX='af4576ee'.decode('hex'),
         P2P_PORT=10888,
         ADDRESS_VERSION=50,
@@ -357,7 +357,7 @@ nets = dict(
         BLOCK_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/block/',
         ADDRESS_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/address/',
         TX_EXPLORER_URL_PREFIX='http://myriad.theblockexplorer.com/tx/',
-	SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**32 - 1),
+	SANE_TARGET_RANGE=(2**256//2**32//1000 - 1, 2**256//2**20 - 1),
         DUMB_SCRYPT_DIFF=1,
         DUST_THRESHOLD=0.0001,
     ),
