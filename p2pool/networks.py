@@ -255,7 +255,7 @@ nets = dict(
         VERSION_CHECK=lambda v: True,
     ),
 
-    myriadcoin=math.Object(
+    myriad_groestl=math.Object(
         PARENT=networks.nets['myriadcoin'],
         SHARE_PERIOD=15, # seconds target spacing
         CHAIN_LENGTH=24*60*60//10, # shares
@@ -264,13 +264,13 @@ nets = dict(
         SPREAD=60, # blocks
         IDENTIFIER='fafa54457667eeee'.decode('hex'),
         PREFIX='fa6754ee45ee76fa'.decode('hex'),
-        P2P_PORT=8889,
+        P2P_PORT=5544,
         MIN_TARGET=0,
         MAX_TARGET=2**256//2**20 - 1,
-        PERSIST=False,
-        WORKER_PORT=3333,
-        BOOTSTRAP_ADDRS='eup2pool.cryptopools.com usp2pool.cryptopools.com asiap2pool.cryptopools.com'.split(' '),
-        ANNOUNCE_CHANNEL='#cryptopools-p2p',
+        PERSIST=True,
+        WORKER_PORT=5545,
+        BOOTSTRAP_ADDRS='birdspool.no-ip.org'.split(' '),
+        #ANNOUNCE_CHANNEL='#cryptopools-p2p',
         VERSION_CHECK=lambda v: True,
     ),
 
