@@ -256,7 +256,7 @@ nets = dict(
     ),
 
     myriad_groestl=math.Object(
-        PARENT=networks.nets['myriadcoin'],
+        PARENT=networks.nets['myriad_groestl'],
         SHARE_PERIOD=15, # seconds target spacing
         CHAIN_LENGTH=24*60*60//10, # shares
         REAL_CHAIN_LENGTH=24*60*60//10, # shares
