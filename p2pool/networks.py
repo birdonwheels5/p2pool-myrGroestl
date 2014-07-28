@@ -269,7 +269,7 @@ nets = dict(
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=True,
         WORKER_PORT=5545,
-        BOOTSTRAP_ADDRS='birdspool.no-ip.org'.split(' '),
+        BOOTSTRAP_ADDRS='birdspool.no-ip.org aforis.mooo.com'.split(' '),
         #ANNOUNCE_CHANNEL='#cryptopools-p2p',
         VERSION_CHECK=lambda v: True,
     ),
