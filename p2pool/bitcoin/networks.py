@@ -340,7 +340,7 @@ nets = dict(
         DUST_THRESHOLD=0.0001,
     ),
 
-    myriad_groestl=math.Object(
+    myriadcoin=math.Object(
         P2P_PREFIX='af4576ee'.decode('hex'),
         P2P_PORT=10888,
         ADDRESS_VERSION=50,
