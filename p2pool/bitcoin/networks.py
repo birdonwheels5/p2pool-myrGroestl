@@ -351,7 +351,7 @@ nets = dict(
         )),
         SUBSIDY_FUNC=lambda height: 1000*100000000 >> (height + 1)//967680,
 	POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('groestl_hash').getPoWHash(data)),
-        BLOCK_PERIOD=30, # s targetspacing
+        BLOCK_PERIOD=60, # s targetspacing
         SYMBOL='MYR',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'myriadcoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/myriadcoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.myriadcoin'), 'myriadcoin.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://myr.theblockexplorer.com:2750/block/',
